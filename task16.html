@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIFE(f)</title>
+</head>
+<body>
+    <script>
+        var array1 = [11, 13, 15, 17, 19];
+        var array2 = [12, 14, 16, 18, 20];
+
+        var median = (() => {
+        var merge = [...array1, ...array2].sort((a, b) => a - b);
+        var n = merge.length;
+        return n % 2 === 0 ? (merge[n / 2 - 1] + merge[n / 2]) / 2 : merge[Math.floor(n / 2)];
+        })();
+
+        console.log(median);
+
+    </script>
+</body>
+</html>
